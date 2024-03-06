@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f5e5d1; /* Light brown background color */
+  background-color: #fff; /* White background color */
 }
 
 .container {
@@ -28,7 +28,7 @@ header {
 }
 
 h1 {
-  font-size: 28px; /* Increased font size */
+  font-size: 2rem; /* Bootstrap's default heading size */
   margin-bottom: 20px;
 }
 
@@ -48,11 +48,21 @@ button {
   background-color: #d2a172; /* Light brown button color */
   border: none;
   color: #fff;
-  font-size: 18px; /* Increased font size */
+  font-size: 1rem; /* Bootstrap's default font size */
   cursor: pointer;
   border-radius: 5px;
 }
 
 button:hover {
   background-color: #b7844f; /* Darker brown on hover */
+}
+
+/* Adjust chat embed positioning and size */
+#rml-room-1 {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
 }
