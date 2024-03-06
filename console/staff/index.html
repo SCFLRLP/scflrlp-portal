@@ -15,8 +15,18 @@
   <header class="bg-dark">
     <div class="container">
       <div class="d-flex justify-content-end py-2">
-        <button id="settingsButton" class="btn btn-secondary mr-2">Settings</button>
-        <button id="logoutButton" class="btn btn-danger">Logout</button>
+        <!-- Settings dropdown button -->
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="settingsDropdownButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Settings
+          </button>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="settingsDropdownButton">
+            <!-- Dropdown items go here -->
+            <a class="dropdown-item" href="https://console.jumpcloud.com/userconsole#/profile">Profile</a>
+            <!-- Add more dropdown items as needed -->
+          </div>
+        </div>
+        <button id="logoutButton" class="btn btn-danger ml-2">Logout</button>
       </div>
     </div>
   </header>
@@ -39,11 +49,6 @@
 
   <script>
     // JavaScript for button functionality
-    const settingsButton = document.getElementById('settingsButton');
-    settingsButton.addEventListener('click', () => {
-      window.location.href = 'https://console.jumpcloud.com/userconsole#/profile';
-    });
-
     const logoutButton = document.getElementById('logoutButton');
     logoutButton.addEventListener('click', () => {
       window.location.href = 'https://console.jumpcloud.com/userconsole/logout';
