@@ -5,53 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SCFLRLP Staff Portal</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- Your custom stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <header>
-    <div class="header-buttons">
-      <button id="settingsButton">Settings</button>
-      <button id="logoutButton" class="logout-button">Logout</button>
+  <header class="bg-dark">
+    <div class="container">
+      <div class="d-flex justify-content-end py-2">
+        <button id="settingsButton" class="btn btn-secondary mr-2">Settings</button>
+        <button id="logoutButton" class="btn btn-danger">Logout</button>
+      </div>
     </div>
   </header>
 
-  <div class="container">
-    <h1>SDSRP Staff Portal</h1>
-    <div class="button-row">
-      <a href="https://www.roblox.com/games/2534724415" target="_blank">
-        <button class="login-button">ER:LC</button>
-      </a>
-      <a href="https://www.sdsrp.com" target="_blank">
-        <button class="login-button">SDSRP</button>
-      </a>
-      <a href="https://console.jumpcloud.com" target="_blank">
-        <button class="login-button">Console</button>
-      </a>
-       <a href="https://botgen.sdsrp.com" target="_blank">
-        <button class="login-button">Discord Bot Invite Link Generator</button>
-      </a>
-      <a href="/server/stats">
-        <button class="login-button">Server Status</button>
-      </a>
-      <a href="/console/staff/subnotice" target="_blank">
-        <button class="login-button">Application Submissions</button>
-      </a>
-      <a href="https://app.netlify.com/sites/sdsrpratings/forms/652af06611f9f200087c1e10" target="_blank">
-        <button class="login-button">Moderation Ratings</button>
-      </a>
-      <a href="https://status.sdsrp.com" target="_blank">
-        <button class="login-button">Status</button>
-      </a>
-      <a href="https://mail.sdsrp.com" target="_blank">
-        <button class="login-button">Staff Mailbox</button>
-      </a>
-      <a href="https://chat.sdsrp.com" target="_blank">
-        <button class="login-button">Staff Chat</button>
-      </a>
-       <a href="https://course.sdsrp.com" target="_blank">
-        <button class="login-button">SDSRP Management Courses</button>
-      </a>
+  <div class="container mt-4">
+    <h1 class="text-center mb-4">SDSRP Staff Portal</h1>
+    <div class="row">
+      <div class="col-md-6 col-lg-4 mb-3">
+        <a href="https://www.roblox.com/games/2534724415" target="_blank" class="btn btn-primary btn-block">ER:LC</a>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-3">
+        <a href="https://www.sdsrp.com" target="_blank" class="btn btn-primary btn-block">SDSRP</a>
+      </div>
+      <div class="col-md-6 col-lg-4 mb-3">
+        <a href="https://console.jumpcloud.com" target="_blank" class="btn btn-primary btn-block">Console</a>
+      </div>
+      <!-- Add more buttons following the same structure -->
     </div>
   </div>
 
@@ -67,6 +49,11 @@
       window.location.href = 'https://console.jumpcloud.com/userconsole/logout';
     });
   </script>
+
+  <!-- Include Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 
 </html>
