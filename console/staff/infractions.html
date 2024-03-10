@@ -35,23 +35,21 @@
 <script>
   function checkInfractionStep() {
     var staffId = document.getElementById('staffId').value;
+    var steps = {
+      // Provide infraction steps for staff IDs here
+      '710450': 0,
+      'staff456': 2,
+      'staff789': 3
+      // Add more as needed
+    };
 
-    // Make a POST request to your Node.js server
-    fetch('/getInfractionStep', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ staffId }),
-    })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Server response:', data); // Log the response from the server
-      displayInfractionStep(data.infractionStep);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+    var infractionStep = steps[staffId];
+
+    if (infractionStep !== undefined) {
+      displayInfractionStep(infractionStep);
+    } else {
+      displayUnknownInfraction();
+    }
   }
 
   function displayInfractionStep(infractionStep) {
@@ -72,9 +70,14 @@
         resultDiv.innerHTML = '<div class="alert alert-danger" role="alert"><h4 class="alert-heading">Infraction Level 3</h4><p>Your account permissions will be suspended, and further action will be decided by moderation.</p><hr></div>';
         break;
       default:
-        resultDiv.innerHTML = '<div class="alert alert-info" role="alert"><h4 class="alert-heading">Unknown Infraction Level</h4><p>No infraction step found for the given staff ID.</p><hr></div>';
+        displayUnknownInfraction();
         break;
     }
+  }
+
+  function displayUnknownInfraction() {
+    var resultDiv = document.getElementById('infractionResult');
+    resultDiv.innerHTML = '<div class="alert alert-info" role="alert"><h4 class="alert-heading">Unknown Infraction Level</h4><p>No infraction step found for the given staff ID.</p><hr></div>';
   }
 </script>
 
