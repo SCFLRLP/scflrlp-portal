@@ -1,0 +1,6 @@
+{
+  "staff1": 0,
+  "staff2": 1,
+  "staff3": 2,
+  // Add more staff members as needed
+}
