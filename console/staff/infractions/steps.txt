@@ -1,6 +1,0 @@
-{
-  "710450": 2,
-  "11079": 0,
-  "11045": 1,
-  // Add more staff members as needed
-}
