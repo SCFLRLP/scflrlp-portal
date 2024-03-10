@@ -1,10 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const fs = require('fs');
 
 const app = express();
-const port = 3000; // You can change this to your desired port
+const port = process.env.PORT || 3000;
 
+app.use(cors()); // Enable CORS
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -18,14 +20,18 @@ app.post('/getInfractionStep', (req, res) => {
   fs.readFile('steps.txt', 'utf8', (err, data) => {
     if (err) {
       console.error(err);
-      res.status(500).send('Error reading infraction steps');
+      res.status(500).json({ error: 'Error reading infraction steps' });
       return;
     }
 
-    const steps = JSON.parse(data);
-    const infractionStep = steps[staffId] || 0;
-
-    res.json({ infractionStep });
+    try {
+      const steps = JSON.parse(data);
+      const infractionStep = steps[staffId] || 0;
+      res.json({ infractionStep });
+    } catch (parseError) {
+      console.error(parseError);
+      res.status(500).json({ error: 'Error parsing infraction steps' });
+    }
   });
 });
 
