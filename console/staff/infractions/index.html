@@ -33,7 +33,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<!-- Your custom JavaScript -->
 <script>
   function checkInfractionStep() {
     var staffId = document.getElementById('staffId').value;
@@ -48,6 +47,7 @@
     })
     .then(response => response.json())
     .then(data => {
+      console.log('Server response:', data); // Log the response from the server
       displayInfractionStep(data.infractionStep);
     })
     .catch(error => {
