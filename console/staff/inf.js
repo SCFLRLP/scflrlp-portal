@@ -8,7 +8,8 @@ function checkInfractionStep() {
       'test0': 0,
       'test1': 1,
       'test2': 2,
-      'test3': 3
+      'test3': 3,
+      '11053': 0
       // Add more as needed
     };
 
