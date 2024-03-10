@@ -17,12 +17,12 @@
 <!-- Content -->
 <div class="container mt-4">
   <h2>Staff Console</h2>
-  <form id="staffForm">
+  <form id="staffForm" onsubmit="event.preventDefault(); checkInfractionStep();">
     <div class="form-group">
       <label for="staffId">Staff ID:</label>
       <input type="text" class="form-control" id="staffId" name="staffId" required>
     </div>
-    <button type="button" class="btn btn-primary" onclick="checkInfractionStep()">Check Infraction Step</button>
+    <button type="submit" class="btn btn-primary">Check Infraction Step</button>
   </form>
   <div id="infractionResult" class="mt-4"></div>
 </div>
