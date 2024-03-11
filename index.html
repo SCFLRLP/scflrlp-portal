@@ -13,7 +13,7 @@
     <h1 class="text-center">SCFLRLP Login</h1>
     <div class="row justify-content-center">
       <div class="col-md-4">
-        <a href="/console/staff" class="btn btn-primary btn-block mb-2">SAML Login</a>
+        <a id="loginButton" href="/console/staff" class="btn btn-primary btn-block mb-2">SAML Login</a>
       </div>
     </div>
   </div>
@@ -21,6 +21,28 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var loginButton = document.getElementById("loginButton");
+
+      function redirectToStaff() {
+        window.location.href = "/console/staff";
+      }
+
+      // Check if the cookie is set
+      if (document.cookie.indexOf("firstClick=true") === -1) {
+        // If not set, set the cookie and redirect
+        loginButton.addEventListener("click", function () {
+          document.cookie = "firstClick=true; max-age=86400"; // Set a cookie for 24 hours
+          redirectToStaff();
+        });
+      } else {
+        // If the cookie is set, redirect
+        redirectToStaff();
+      }
+    });
+  </script>
 </body>
 
 </html>
