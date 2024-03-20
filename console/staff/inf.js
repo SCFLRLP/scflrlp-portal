@@ -3,12 +3,13 @@ function checkInfractionStep() {
     var steps = {
       // Provide infraction steps for staff IDs here
       '710450': 0,
-      '11079': 0,
+      '11079': 1,
       'test0': 0,
       'test1': 1,
       'test2': 2,
       'test3': 3,
-      '11053': 0
+      '11053': 0,
+      '11032': 0
       // Add more as needed
     };
 
